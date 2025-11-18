@@ -1,0 +1,72 @@
+{
+  "name": "contntful-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@contentful/app-sdk": "^4.29.1",
+    "@contentful/f36-components": "4.48.0",
+    "@contentful/f36-tokens": "4.0.2",
+    "@contentful/react-apps-toolkit": "^1.2.16",
+    "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^1.4.0",
+    "axios-hooks": "^5.0.2",
+    "chart.js": "^4.4.7",
+    "contentful": "^10.15.0",
+    "contentful-management": "10.39.2",
+    "emotion": "10.0.27",
+    "fastest-levenshtein": "^1.0.16",
+    "font-awesome": "^4.7.0",
+    "http-proxy-agent": "^7.0.0",
+    "http-proxy-middleware": "^2.0.6",
+    "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "18.2.0",
+    "react-redux": "^8.1.2",
+    "react-router-dom": "^6.14.2",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.1",
+    "redux-immutable-state-invariant": "^2.1.0",
+    "redux-thunk": "^2.4.2",
+    "reselect": "^4.1.8",
+    "styled-components": "^6.0.7",
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "start": "cross-env BROWSER=none react-scripts start",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "react-scripts test",
+    "test:watch": "react-scripts test --watchAll",
+    "lint": "eslint 'src/**/*.{js,jsx}'",
+    "upload": "contentful-app-scripts upload --bundle-dir ./build",
+    "upload-ci": "COMMIT_MSG=$(node scripts/extractCommitMessage.js) && contentful-app-scripts upload --ci --bundle-dir ./build --organization-id $CONTENTFUL_ORG_ID --definition-id $CONTENTFUL_APP_DEF_ID --token $CONTENTFUL_ACCESS_TOKEN --comment \"$COMMIT_MSG\""
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(axios)/)"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@contentful/app-scripts": "1.10.2",
+    "@testing-library/jest-dom": "5.17.0",
+    "@testing-library/react": "14.0.0",
+    "cross-env": "7.0.3"
+  },
+  "homepage": "./"
+}
